@@ -51,7 +51,17 @@ const quotes = [
      `quotes` array.
 ***/
 
+const getRandomQuote = () => {
 
+}
+
+
+// The following function will generate a number according the length of the given quotes array
+// e.g. if additional quotes will be added to the quotes array, the function will provide a random number that includes all quotes in the array
+// Please note: the function will provide a number starting from 0, because a array is 0 index based
+const getRandomNumber = (array) => {
+  return Math.floor(Math.random() * array.length);
+}
 
 
 /***
