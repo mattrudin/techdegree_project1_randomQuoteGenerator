@@ -44,15 +44,13 @@ const quotes = [
 
 
 
-/***
-  Create the `getRandomQuote` function to:
-   - generate a random number 
-   - use the random number to `return` a random quote object from the 
-     `quotes` array.
-***/
+// The following function will return an random object of the quotes array
+// It uses the getRandomNumber function
 
-const getRandomQuote = () => {
-
+const getRandomQuote = (array) => {
+  const randomNumber = getRandomNumber(array);
+  const quote = array[randomNumber];
+  return quote;
 }
 
 
