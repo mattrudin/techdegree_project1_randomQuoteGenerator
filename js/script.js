@@ -5,6 +5,9 @@ FSJS project 1 - A Random Quote Generator
 
 // Please note that this file uses >= ECMA2015 syntax 
 
+/************************************************************************************
+Quotes array
+************************************************************************************/
 /* 
 quotes array with objects in it
 Minimum requirements: 
@@ -39,10 +42,12 @@ const quotes = [
 ]
 
 
-
+/************************************************************************************
+getRandomQuote function
+************************************************************************************/
 /* 
-The following function will return an random object of the quotes array
-It uses the getRandomIndex function
+The following function will return an random object of the quotes array.
+It uses the getRandomIndex function.
  */
 const getRandomQuote = array => {
   const randomIndex = getRandomIndex(array);
@@ -50,23 +55,21 @@ const getRandomQuote = array => {
 }
 
 /* 
-The following function will generate a number/index according the length of the given quotes array
-e.g. if additional quotes will be added to the quotes array, the function will provide a random number that includes all quotes in the array
-Please note: the function will provide a number starting from 0, because a array is 0 index based
+The following function will generate a number/index according the length of the given quotes array.
+e.g. if additional quotes will be added to the quotes array, the function will provide a random number that includes all quotes in the array.
+Please note: the function will provide a number starting from 0, because a array is 0 index based.
  */
 const getRandomIndex = array =>  Math.floor(Math.random() * array.length);
 
 
-/***
-  Create the `printQuote` function to: 
-   - call the `getRandomQuote` function and assign it to a variable.
-   - use the properties of the quote object stored in the variable to 
-     create your HTML string.
-   - use conditionals to make sure the optional properties exist before 
-     they are added to the HTML string.
-   - set the `innerHTML` of the `quote-box` div to the HTML string. 
-***/
-
+/************************************************************************************
+printQuote function
+************************************************************************************/
+/* 
+The following function will invoke the getRandomQuote function with the quotes-array and receives a quotes-object.
+It creates a string with the values of the quotes-object and checks if "citation" or "year" is present.
+Then it uses the printStringToHTML function to print the given string to the website.
+*/
 const printQuote = () => {
   const quote = getRandomQuote(quotes);
   //const { quote,source,citation,year} = quote;
@@ -74,18 +77,18 @@ const printQuote = () => {
   printStringToHTML(string);
 }
 
+
+/* 
+The following function will set the innerHTML of the "quote-box" to a given string.
+*/
 const printStringToHTML = string => document.getElementById('quote-box').innerHTML = string;
 
 
-
-/***
-  When the "Show another quote" button is clicked, the event listener 
-  below will be triggered, and it will call, or "invoke", the `printQuote` 
-  function. So do not make any changes to the line of code below this 
-  comment.
-***/
+/************************************************************************************
+EventListener
+************************************************************************************/
+/* 
+EventListener for the loadQuote-button
+ */
 
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
-
-
-// Remember to delete the comments that came with this file, and replace them with your own code comments.
