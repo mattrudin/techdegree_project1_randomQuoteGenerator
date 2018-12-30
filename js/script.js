@@ -3,18 +3,15 @@ Treehouse Techdegree:
 FSJS project 1 - A Random Quote Generator
 ******************************************/
 
-// Study guide for this project - https://drive.google.com/file/d/1s5grutGuQFwJcQP8bFwEI69Q8FCkGdDk/view?usp=sharing
+// Please note that this file uses >= ECMA2015 syntax 
 
-
-/*** 
-  Create the array of quote objects and name it `quotes`.
-  Add at least five quote objects to the `quotes` array.
-  Give each quote object a `quote` and `source` property.
-
-  Recommended: 
-    - Add at least one `year` and/or `citation` property to at least one 
-      quote object.
-***/
+/* 
+quotes array with objects in it
+Minimum requirements: 
+    5 objects
+    each object with "quote" and "source"
+    min 1 object with "year" and/or "citation" 
+*/
 const quotes = [
   {
     quote: "Every new beginning comes from some other beginning's end.",
@@ -43,19 +40,20 @@ const quotes = [
 
 
 
-
-// The following function will return an random object of the quotes array
-// It uses the getRandomIndex function
-
+/* 
+The following function will return an random object of the quotes array
+It uses the getRandomIndex function
+ */
 const getRandomQuote = array => {
   const randomIndex = getRandomIndex(array);
   return array[randomIndex];
 }
 
-
-// The following function will generate a number/index according the length of the given quotes array
-// e.g. if additional quotes will be added to the quotes array, the function will provide a random number that includes all quotes in the array
-// Please note: the function will provide a number starting from 0, because a array is 0 index based
+/* 
+The following function will generate a number/index according the length of the given quotes array
+e.g. if additional quotes will be added to the quotes array, the function will provide a random number that includes all quotes in the array
+Please note: the function will provide a number starting from 0, because a array is 0 index based
+ */
 const getRandomIndex = array =>  Math.floor(Math.random() * array.length);
 
 
