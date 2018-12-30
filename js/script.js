@@ -45,21 +45,18 @@ const quotes = [
 
 
 // The following function will return an random object of the quotes array
-// It uses the getRandomNumber function
+// It uses the getRandomIndex function
 
-const getRandomQuote = (array) => {
-  const randomNumber = getRandomNumber(array);
-  const quote = array[randomNumber];
-  return quote;
+const getRandomQuote = array => {
+  const randomIndex = getRandomIndex(array);
+  return array[randomIndex];
 }
 
 
-// The following function will generate a number according the length of the given quotes array
+// The following function will generate a number/index according the length of the given quotes array
 // e.g. if additional quotes will be added to the quotes array, the function will provide a random number that includes all quotes in the array
 // Please note: the function will provide a number starting from 0, because a array is 0 index based
-const getRandomNumber = (array) => {
-  return Math.floor(Math.random() * array.length);
-}
+const getRandomIndex = array =>  Math.floor(Math.random() * array.length);
 
 
 /***
