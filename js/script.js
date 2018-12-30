@@ -71,9 +71,18 @@ It creates a string with the values of the quotes-object and checks if "citation
 Then it uses the printStringToHTML function to print the given string to the website.
 */
 const printQuote = () => {
-  const quote = getRandomQuote(quotes);
-  //const { quote,source,citation,year} = quote;
-  const string = `<p class="quote">${quote.quote}</p><p class="source">${quote.source}${quote.citation ? `<span class="citation">${quote.citation}</span>` : ""}${quote.year ? `<span class="year">${quote.year}</span>` : ""}</p>`
+  const quoteSource = getRandomQuote(quotes);
+  const { quote, source, citation, year } = quoteSource;
+  const string = `
+    <p class="quote">${quote}</p>
+    <p class="source">${source}
+    ${citation ? 
+      `<span class="citation">${citation}</span>` 
+      : ""}
+    ${year ? 
+      `<span class="year">${year}</span>` 
+      : ""}
+    </p>`
   printStringToHTML(string);
 }
 
