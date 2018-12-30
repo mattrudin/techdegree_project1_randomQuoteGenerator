@@ -15,6 +15,31 @@ FSJS project 1 - A Random Quote Generator
     - Add at least one `year` and/or `citation` property to at least one 
       quote object.
 ***/
+const quotes = [
+  {
+    quote: "Every new beginning comes from some other beginning's end.",
+    source: "Seneca",
+  },
+  {
+    quote: "Later equals never.",
+    source: "Dave LeBlanc",
+  },
+  {
+    quote: "Hofstadter's Law: It always takes longer than you expect, even when you take into account Hofstadter's Law.",
+    source: "Douglas Hofstadter",
+    year: "1979",
+    citation: "Gödel, Escher, Bach: An Eternal Golden Braid",
+  },
+  {
+    quote: "The first 90 percent of the code accounts for the first 90 percent of the development time. The remaining 10 percent of the code accounts for the other 90 percent of the development time.",
+    source: " Tom Cargill",
+    citation: "Bell Labs",
+  },
+  {
+    quote: "Don’t compare yourself with anyone in this world…if you do so, you are insulting yourself.",
+    source: "Bill Gates",
+  },
+]
 
 
 
