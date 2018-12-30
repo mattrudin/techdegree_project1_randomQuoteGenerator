@@ -67,6 +67,14 @@ const getRandomIndex = array =>  Math.floor(Math.random() * array.length);
    - set the `innerHTML` of the `quote-box` div to the HTML string. 
 ***/
 
+const printQuote = () => {
+  const quote = getRandomQuote(quotes);
+  //const { quote,source,citation,year} = quote;
+  const string = `<p class="quote">${quote.quote}</p><p class="source">${quote.source}${quote.citation ? `<span class="citation">${quote.citation}</span>` : ""}${quote.year ? `<span class="year">${quote.year}</span>` : ""}</p>`
+  printStringToHTML(string);
+}
+
+const printStringToHTML = string => document.getElementById('quote-box').innerHTML = string;
 
 
 
